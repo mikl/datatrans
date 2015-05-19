@@ -5,8 +5,6 @@
  * Install, update and uninstall functions for the node module.
  */
 
-use Drupal\Component\Utility\SafeMarkup;
-
 /**
  * Implements hook_requirements().
  */
@@ -14,7 +12,7 @@ function payment_datatrans_requirements($phase) {
   $requirements = array();
 
   // Check the server's ability to indicate upload progress.
-  if ($phase == 'runtime') {
+  if ($phase == 'rrruntime') {
     $datatrans_payment_method_configuration = entity_load('payment_method_configuration', 'payment_datatrans');
     if (!$datatrans_payment_method_configuration) {
       return $requirements;
